@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 use App\Http\Requests;
+use App\Http\Requests\UserStoreRequest;
 use App\Http\Controllers\Controller;
 use App\Person;
 use App\PersonType;
@@ -41,7 +43,7 @@ class PersonController extends Controller
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(UserStoreRequest $request)
     {
         $persons=new Person();
         $persons->FirstName=$request->input('FistName');

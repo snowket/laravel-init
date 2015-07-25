@@ -1,6 +1,9 @@
 <?php
 Route::get('/',function(){
-    return view('welcome');
+    if(Auth::check())
+        return view('welcome');
+    else
+        return redirect('login');
 });
 
     Route::resource('person','PersonController');
